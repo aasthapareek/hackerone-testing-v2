@@ -1,0 +1,10 @@
+{
+  "type": "service_account",
+  "project_id": "taskflow-prod-284719",
+  "private_key_id": "3dfd15a26598f646908fe5b86171e1ad427e40fa",
+  "private_key": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEA0Z3VS5JJcds3xfn/ygWyF8PUH5v6W1z1g/kPn0bT8r+r3X\nVKzEYmmCJ7B6C3KQyBnPfqqXt/e6Vfhdy9rMGeW2S+t8K0JFGtHx0u5+HnpR+b\n7d/WB0Q3S9ZNz5s8C4ALu5A3ikx/NYF4JnKJKqB/a6CUjHG9TmOltFe9Ybq5Jas\n-----END RSA PRIVATE KEY-----\n",
+  "client_email": "taskflow-sa@taskflow-prod-284719.iam.gserviceaccount.com",
+  "client_id": "117284653901847362951",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token"
+}

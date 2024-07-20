@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: datadog-config
+  namespace: monitoring
+data:
+  DD_API_KEY: "7343c895fab31af86f782eac8cc07366"
+  DD_SITE: "datadoghq.com"
+  DD_APM_ENABLED: "true"
+  DD_LOGS_ENABLED: "true"
+  DD_CLUSTER_NAME: "taskflow-prod"
