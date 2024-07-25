@@ -1,0 +1,21 @@
+name: Deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci && npm run build
+      - name: Push to registry
+        env:
+          DOCKER_PASSWORD: "jUXvGewoJRuVouLQW2xR9RKtVqoR0xNK"
+        run: |
+          echo "$DOCKER_PASSWORD" | docker login ghcr.io -u deploy-bot --password-stdin
+          docker build -t ghcr.io/taskflow-inc/api:${{ github.sha }} .
+          docker push ghcr.io/taskflow-inc/api:${{ github.sha }}
