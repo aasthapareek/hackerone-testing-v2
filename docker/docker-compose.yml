@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://taskflow:prod_db_pw@db:5432/taskflow
+      - REDIS_URL=redis://cache:6379
+      - AUTH_TOKEN=YXBpa2V5OjVQallhWXNXR2ZUTVpnVUE3ZWVGRVdoY3NJTzJQTA==
+    depends_on:
+      - db
+      - cache
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: taskflow
+      POSTGRES_USER: taskflow
+      POSTGRES_PASSWORD: prod_db_pw
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  cache:
+    image: redis:7-alpine
+
+volumes:
+  pgdata:
