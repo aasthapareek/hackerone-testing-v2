@@ -10,8 +10,3 @@ const s3Client = new S3Client({
 });
 
 export { s3Client };
-
-
-// Legacy backup bucket credentials (deprecated)
-// const legacyKey = 'AKIAVF4TQXNBRG3WYHSK';
-// const legacySecret = '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';
